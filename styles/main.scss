@@ -22,7 +22,7 @@ html {
     -moz-background-size: cover;
     background-size: cover;
 }
-// border for buttons action
+// border for active buttons
 .limeBorder {
     border: 2px solid lime;
 }
@@ -30,7 +30,7 @@ html {
 
 /**** TITLE ****/
 header {
-    width: 310px;
+    width: 280px;
     margin: auto;
 
     img {
@@ -39,14 +39,14 @@ header {
         float: left;
     }
 
-    div.jsdrums {
-        padding-top: 38px;
+    .jsdrums {
+        padding-top: 50px;
         padding-left: 5px;
         font-family: 'Bangers', cursive;
         font-weight: 700;
         color: darkgrey;
         float: left;
-        font-size: 60px;
+        font-size: 50px;
         text-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
         letter-spacing: 6px;
     }
@@ -58,42 +58,46 @@ header {
     }
 }
 
-.container img.arrow  {
-  position: absolute;
-  left: 50px;
-  top: 130px;
+.container img.arrowTap {
+    position: absolute;
+    left: 50px;
+    top: 130px;
 }
 
-.container p.arrow  {
-  position: absolute;
-  left: 120px;
-  top: 120px;
-  font-family: 'Indie Flower', cursive;
-  font-size: 30px;
-  color: black;
+
+/**** ARROW TAP ****/
+.container p.arrowTap {
+    position: absolute;
+    left: 120px;
+    top: 120px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    color: black;
 }
 
 
 /**** PADS ****/
 .patterns {
     margin-top: 60px;
+
     div {
         display: flex;
         flex-direction: row;
         margin: 2px;
     }
 
-    div.txt {
+    .txt {
         width: 80px;
         height: 50px;
         display: inline-block;
-        padding-top: 18px;
+        padding-top: 20px;
+        padding-right: 2px;
         font-weight: 700;
         color: lightgrey;
         text-align: right;
     }
 
-    div div.pad {
+    div .pad {
         width: 50px;
         height: 50px;
         background: grey;
@@ -101,8 +105,13 @@ header {
         border-radius: 10%;
     }
     // different color of tacts
-    div div.tact {
+    div .tact {
         background: darkgrey;
+    }
+
+    .folder {
+        padding-top: 8px;
+        padding-left: 4px;
     }
     // current pad
     .currentPad {
@@ -113,8 +122,35 @@ header {
     }
     // selected pad
     div.selected {
-        background: orange !important;
+        background: orange;
     }
+}
+
+
+
+.audible {
+  img{
+    padding-top: 10px;
+    padding-left: 2px;
+  }
+
+}
+.patterns div.mutedTact {
+  background-color: rgba(168, 168, 169, 0.3);
+background: rgba(168, 168, 169, 0.3);
+color: rgba(168, 168, 169, 0.3);
+}
+
+.patterns div.mutedPad {
+    background-color: rgba(128, 128, 129, 0.3);
+    background: rgba(128, 128, 129, 0.3);
+    color: rgba(128, 128, 129, 0.3);
+}
+
+.patterns div.mutedSelected {
+    background-color: rgba(255, 166, 0, 0.3);
+    background: rgba(255, 166, 0, 0.3);
+    color: rgba(255, 166, 0, 0.3);
 }
 
 
@@ -122,7 +158,6 @@ header {
 .controls {
     width: 105px;
     margin: 20px auto;
-
     /* START/PAUSE */
     .pressplay {
         div {
@@ -150,7 +185,6 @@ header {
             content: "";
         }
     }
-
     /* TEMPO */
     div.bpm {
         width: 80px;
@@ -189,14 +223,15 @@ header {
     }
 }
 
+
 /**** FOOTER ****/
 footer {
     width: 100%;
     height: 30px;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     padding-top: 5px;
-    font-family: Arial, sans-serif;
+    font-family: Tahoma, sans-serif;
     font-size: 14px;
     background: black;
     color: grey;

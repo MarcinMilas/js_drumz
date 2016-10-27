@@ -21,6 +21,14 @@ document.addEventListener("DOMContentLoaded", function() {
     // pads iterator
     var iterator = 0;
 
+    // CLEAR PATTERN
+    var patternClear = document.querySelectorAll(".txt");
+
+    // MUTE
+    var muteKick = document.querySelector(".kick .audible");
+    var mutehitHat = document.querySelector(".hitHat .audible");
+    var muteSnare = document.querySelector(".snare .audible");
+
     // START/PAUSE
     var start = document.querySelector(".start");
     var pause = document.querySelector(".pause");
@@ -71,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // PLAYING
             // playing selected sounds (clones used  to avoid not playing the sound when they overlap)
             // kick
-            if (kick[iterator].className.indexOf("selected") != -1) {
+            if (kick[iterator].className.indexOf("selected") != -1 && kickSound !== "" && kickSoundClone !== "") {
                 if (iterator % 2 === 0) {
                     kickSound.play();
                 } else {
@@ -79,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
             // hit-hat
-            if (hitHat[iterator].className.indexOf("selected") != -1) {
+            if (hitHat[iterator].className.indexOf("selected") != -1 && hitHatSound !== "" && hitHatSoundClone !== "") {
                 if (iterator % 2 === 0) {
                     hitHatSound.play();
                 } else {
@@ -87,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
             // snare
-            if (snare[iterator].className.indexOf("selected") != -1) {
+            if (snare[iterator].className.indexOf("selected") != -1 && snareSound !== "" && snareSoundClone !== "") {
                 if (iterator % 2 === 0) {
                     snareSound.play();
                 } else {
@@ -105,6 +113,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }, tempo);
     }
 
+    // MUTE
+    function mute(array) {
+      for (var i = 0; i < array.length; i++) {
+        if (array[i].className.indexOf("selected") >= 0) {
+          array[i].classList.toggle("mutedSelected");
+        } else if (array[i].className.indexOf("tact") >= 0) {
+          array[i].classList.toggle("mutedTact");
+        } else {
+          array[i].classList.toggle("mutedPad");
+        }
+      }
+    }
 
     // START BUTTON BORDER GLIMMER
     var startButtonLight; // // needed to prevent from pressing start 2 or more times (glimmering speeds up)
@@ -137,6 +157,66 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // CLEAR PATTERN
+    for (var i = 0; i < patternClear.length; i++) {
+      patternClear[i].addEventListener("click", function(event) {
+        // clear kick
+        if (event.target === patternClear[0]) {
+          for (var i = 0; i < kick.length; i++) {
+            kick[i].classList.remove("selected");
+          }
+        // clear hitHat
+        } else if (event.target === patternClear[1]) {
+          for (var i = 0; i < hitHat.length; i++) {
+            hitHat[i].classList.remove("selected");
+          }
+        // clear snare
+        } else if (event.target === patternClear[2]) {
+          for (var i = 0; i < snare.length; i++) {
+            snare[i].classList.remove("selected");
+          }
+        }
+      })
+    };
+
+    // MUTE
+    // mute kick
+    muteKick.addEventListener("click", function() {
+      if (kickSound !== "" && kickSoundClone !== "") {
+        mute(kick);
+        kickSound = "";
+        kickSoundClone = "";
+      } else  {
+        mute(kick);
+        kickSound = new Audio("sounds/kick.wav");
+        kickSoundClone = new Audio("sounds/kick.wav");
+      }
+    })
+    // mute hitHat
+    mutehitHat.addEventListener("click", function() {
+      if (hitHatSound !== "" && hitHatSoundClone !== "") {
+        mute(hitHat);
+        hitHatSound = "";
+        hitHatSoundClone = "";
+      } else  {
+        mute(hitHat);
+        hitHatSound = new Audio("sounds/hitHat.wav");
+        hitHatSoundClone = new Audio("sounds/hitHat.wav");
+      }
+    })
+    // mute snare
+    muteSnare.addEventListener("click", function() {
+      if (snareSound !== "" && snareSoundClone !== "") {
+        mute(snare);
+        snareSound = "";
+        snareSoundClone = "";
+      } else  {
+        mute(snare);
+        snareSound = new Audio("sounds/snare.wav");
+        snareSoundClone = new Audio("sounds/snare.wav");
+      }
+    })
+
     // START/PAUSE
     // start
     start.addEventListener("click", function() {
@@ -160,6 +240,7 @@ document.addEventListener("DOMContentLoaded", function() {
         startButtonLight = undefined;
         // setting round lime border
         pause.classList.toggle("limeBorder");
+        // removing border from start
         start.classList.remove("limeBorder");
     });
 
