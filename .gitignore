@@ -1,7 +1,0 @@
-### Sass ###
-.sass-cache/
-.styles/*.css.map
-.styles/*.css
-
-### Others ###
-.DS_Store
