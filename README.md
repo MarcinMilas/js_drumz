@@ -12,6 +12,8 @@ Sounds are already included in the repository (although you can use your own but
 
 * **Marcin Milas**
 
+* Icons are provided by http://www.flaticon.com *
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
