@@ -12,7 +12,7 @@ Sounds are already included in the repository (although you can use your own but
 
 * **Marcin Milas**
 
-* Icons are provided by http://www.flaticon.com *
+* Icons are provided by http://www.flaticon.com
 
 ## License
 
