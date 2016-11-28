@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // kick pads
     // (clones needed when sounds overlap)
     var kick = document.querySelectorAll(".kick div.pad");
-    var kickSound = new Audio("sounds/kick.wav");
-    var kickSoundClone = new Audio("sounds/kick.wav");
+    var kickSound = new Audio("sounds/kick.mp3");
+    var kickSoundClone = new Audio("sounds/kick.mp3");
     // hitHat pads
     var hitHat = document.querySelectorAll(".hitHat div.pad");
-    var hitHatSound = new Audio("sounds/hitHat.wav");
-    var hitHatSoundClone = new Audio("sounds/hitHat.wav");
+    var hitHatSound = new Audio("sounds/hitHat.mp3");
+    var hitHatSoundClone = new Audio("sounds/hitHat.mp3");
     // snare pads
     var snare = document.querySelectorAll(".snare div.pad");
-    var snareSound = new Audio("sounds/snare.wav");
-    var snareSoundClone = new Audio("sounds/snare.wav");
+    var snareSound = new Audio("sounds/snare.mp3");
+    var snareSoundClone = new Audio("sounds/snare.mp3");
     // pads iterator
     var iterator = 0;
 
