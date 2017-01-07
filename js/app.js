@@ -188,8 +188,8 @@ document.addEventListener("DOMContentLoaded", function() {
         kickSoundClone = "";
       } else  {
         mute(kick);
-        kickSound = new Audio("sounds/kick.wav");
-        kickSoundClone = new Audio("sounds/kick.wav");
+        kickSound = new Audio("sounds/kick.mp3");
+        kickSoundClone = new Audio("sounds/kick.mp3");
       }
     })
     // mute hitHat
@@ -200,8 +200,8 @@ document.addEventListener("DOMContentLoaded", function() {
         hitHatSoundClone = "";
       } else  {
         mute(hitHat);
-        hitHatSound = new Audio("sounds/hitHat.wav");
-        hitHatSoundClone = new Audio("sounds/hitHat.wav");
+        hitHatSound = new Audio("sounds/hitHat.mp3");
+        hitHatSoundClone = new Audio("sounds/hitHat.mp3");
       }
     })
     // mute snare
@@ -212,8 +212,8 @@ document.addEventListener("DOMContentLoaded", function() {
         snareSoundClone = "";
       } else  {
         mute(snare);
-        snareSound = new Audio("sounds/snare.wav");
-        snareSoundClone = new Audio("sounds/snare.wav");
+        snareSound = new Audio("sounds/snare.mp3");
+        snareSoundClone = new Audio("sounds/snare.mp3");
       }
     })
 
